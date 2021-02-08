@@ -19,4 +19,4 @@ class District(BaseModel):
     def validate_description(self, key, description):
         description = validate_type(description, str, key)
         description = validate_not_empty(description, key)
-        return validate_len(description, 100, key)
+        return validate_len(description, 50, key)

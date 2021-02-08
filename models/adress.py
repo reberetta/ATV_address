@@ -21,19 +21,18 @@ class Adress(BaseModel):
 
     @validates('description')
     def validate_description(self, key, description):
-        if description is None:
-            return description
+        description = validate_not_empty(description, key)
         description = validate_type(description, str, key)
-        return validate_len(description, 255, key)
+        return validate_len(description, 50, key)
 
     @validates('number')
     def validate_number(self, key, number):
+        number = validate_not_empty(number, key)
         number = validate_type(number, float, key)
-        number = validate_be_greater_than_zero(number, key)
-        return number
+        return validate_be_greater_than_zero(number, key)
     
     @validates('cep')
     def validate_name(self, key, cep):
-        cep = validate_type(cep, str, key)
         cep = validate_not_empty(cep, key)
-        return validate_len(cep, 100, key)
+        cep = validate_type(cep, str, key)
+        return validate_len(cep, 10, key)

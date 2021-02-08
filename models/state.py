@@ -4,6 +4,7 @@ from models.base_model import BaseModel
 from models.country import Country
 from sqlalchemy import Column, String, Integer, ForeingKey, relationship
 
+
 class State(BaseModel):
     __tablename__ = 'state'
     description = Column(String(length = 50), nullable = False)
