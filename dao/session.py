@@ -6,9 +6,9 @@ class Session:
     def __init__(self):
         connector = 'mysql+pymysql'
         host = 'mysql08-farm15.uni5.net'
-        user = 'topskills'
+        user = 'topskills14'
         password = 'olist21'
-        dbname = 'topskills'
+        dbname = 'topskills14'
         self.__conn_string = f'{connector}://{user}:{password}@{host}:3306/{dbname}'
 
     def __enter__(self):
