@@ -2,25 +2,28 @@ import pytest
 from models.address import Address
 
 
-class TestState:
+class TestAddress:
     def test_address_instance():
-        address = State('rua amintas', 453, '34352-54')
-        assert isinstance(address, State)
-        assert address.description == 'rua amintas'
-        assert address.number == 453
-        assert address.cep == '34352-54'
+        description = 'rua amintas'
+        number = 453
+        cep = '34352-54'
+        address = Address('rua amintas', number, cep)
+        assert isinstance(address, Address)
+        assert address.description == description
+        assert address.number == number
+        assert address.cep == cep
 
-    def test_address_name_empty():
+    def test_address_description_empty():
         with pytest.raises(ValueError):
-            address = State('')
+            address = Address('', 453, '34352-54')
 
-    def test_address_name_len():
+    def test_address_description_len():
         with pytest.raises(ValueError):
-            address = Address('rua amintas'*100, 453, '34352-54')
+            address = Address('A'*51, 453, '34352-54')
 
-    def test_address_name_int():
+    def test_address_description_int():
         with pytest.raises(TypeError):
-            address = Address(10)
+            address = Address(10, 453, '34352-54')
 
     def test_address_number_empty():
         with pytest.raises(ValueError):
@@ -30,14 +33,14 @@ class TestState:
         with pytest.raises(TypeError):
             address = Address('rua amintas', '453', '34352-54')
 
-    def test_address_description_empty():
+    def test_address_cep_empty():
         with pytest.raises(ValueError):
             address = Address('rua amintas', 564, '')
 
-    def test_address_description_len():
+    def test_address_cep_len():
         with pytest.raises(ValueError):
             address = Address('rua amintas', 453, '34352-54'*100)
 
-    def test_address_description_int():
+    def test_address_cep_int():
         with pytest.raises(TypeError):
             address = Address('rua amintas', 453, 100)

@@ -8,14 +8,14 @@ class TestCountry:
         assert isinstance(country, Country)
         assert country.description == 'brasil'
 
-    def test_country_name_empty():
+    def test_country_description_empty():
         with pytest.raises(ValueError):
             country = Country('')
 
-    def test_country_name_len():
+    def test_country_description_len():
         with pytest.raises(ValueError):
             country = Country('nome aleatorio'*100)
 
-    def test_country_name_int():
+    def test_country_description_int():
         with pytest.raises(TypeError):
             country = Country(10)
