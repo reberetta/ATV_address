@@ -18,3 +18,22 @@ class Adress(BaseModel):
         self.number = number
         self.cep = cep
         self.id_district = id_district
+
+    @validates('description')
+    def validate_description(self, key, description):
+        if description is None:
+            return description
+        description = validate_type(description, str, key)
+        return validate_len(description, 255, key)
+
+    @validates('number')
+    def validate_number(self, key, number):
+        number = validate_type(number, float, key)
+        number = validate_be_greater_than_zero(number, key)
+        return number
+    
+    @validates('cep')
+    def validate_name(self, key, cep):
+        cep = validate_type(cep, str, key)
+        cep = validate_not_empty(cep, key)
+        return validate_len(cep, 100, key)
