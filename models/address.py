@@ -3,6 +3,7 @@ sys.path.append('.')
 from models.base_model import BaseModel
 from models.district import District
 from sqlalchemy import Column, String, Integer, ForeingKey, relationship
+from utils.validators import validate_type, validate_not_empty, validate_len, validate_greater_than_zero
 
 
 class Address(BaseModel):
@@ -36,3 +37,8 @@ class Address(BaseModel):
         cep = validate_not_empty(cep, key)
         cep = validate_type(cep, str, key)
         return validate_len(cep, 10, key)
+
+    @validates('id_district')
+    def validate_id_customer(self, key, id_district):
+        validate_greater_than_zero(id_district, key)
+        return validate_type(id_district, int, key)

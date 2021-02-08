@@ -19,7 +19,7 @@ def validate_len(value: object, max_len: int, key: str):
     return value
 
 
-def validate_be_greater_than_zero(value: float, key: str):
+def validate_greater_than_zero(value: float, key: str):
     if value <= 0:
         raise ValueError(f"Value can't be lower than zero.")
     return value
