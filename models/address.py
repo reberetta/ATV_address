@@ -5,8 +5,8 @@ from models.district import District
 from sqlalchemy import Column, String, Integer, ForeingKey, relationship
 
 
-class Adress(BaseModel):
-    __tablename__ = 'adress'
+class Address(BaseModel):
+    __tablename__ = 'address'
     description = Column(String(length = 50), nullable = False)
     number = Column(Integer, nullable = False)
     cep = Column(String(length = 10), nullable = False)
