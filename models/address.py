@@ -30,8 +30,8 @@ class Address(BaseModel):
 
     @validates('number')
     def validate_number(self, key, number):
-        number = validate_not_empty(number, key)
         number = validate_type(number, float, key)
+        number = validate_not_empty(number, key)
         return validate_be_greater_than_zero(number, key)
     
     @validates('cep')
