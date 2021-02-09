@@ -1,3 +1,5 @@
+import sys
+sys.path.append('.')
 from flask_restful import fields, marshal_with
 from dao.address_dao import AddressDao
 from models.address import Address 
