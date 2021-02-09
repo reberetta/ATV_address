@@ -21,9 +21,9 @@ class TestState:
             state = State(10)
 
     def test_state_id_country_str(self):
-        with pytest.raises(TypeError)
+        with pytest.raises(TypeError):
             state = State('centro', '1')
 
     def test_state_id_country_lower_than_zero(self):
-        with pytest.raises(ValueError)
+        with pytest.raises(ValueError):
             state = State('centro', -5)

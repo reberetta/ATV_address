@@ -21,9 +21,9 @@ class TestDistrict:
             district = District(10)
 
     def test_district_id_city_str(self):
-        with pytest.raises(TypeError)
+        with pytest.raises(TypeError):
             district = District('centro', '1')
 
     def test_district_id_city_lower_than_zero(self):
-        with pytest.raises(ValueError)
+        with pytest.raises(ValueError):
             district = District('centro', -5)

@@ -47,9 +47,9 @@ class TestAddress:
             address = Address('rua amintas', 453, 100, 1)
 
     def test_address_id_district_str(self):
-        with pytest.raises(TypeError)
+        with pytest.raises(TypeError):
             address = Address('rua amintas', 453, 100, '1')
 
     def test_address_id_district_lower_than_zero(self):
-        with pytest.raises(ValueError)
+        with pytest.raises(ValueError):
             address = Address('rua amintas', 453, 100, -5)

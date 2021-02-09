@@ -21,9 +21,9 @@ class TestCity:
             city = City(10)
 
     def test_city_id_state_str(self):
-        with pytest.raises(TypeError)
+        with pytest.raises(TypeError):
             city = City('Blumenau', '1')
 
     def test_city_id_state_lower_than_zero(self):
-        with pytest.raises(ValueError)
+        with pytest.raises(ValueError):
             city = City('Blumenau', -5)
