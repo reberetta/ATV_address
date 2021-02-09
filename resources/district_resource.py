@@ -3,20 +3,20 @@ sys.path.append('model')
 sys.path.append('dao')
 sys.path.append('resource')
 from flask_restful import fields, marshal_with
-from city_dao import CityDao
-from city_model import City
+from district_dao import DistrictDao
+from district_model import District
 from resource.base_resource import BaseResource
 
 
-class CityResource(BaseResource):
+class DistrictResource(BaseResource):
     fields = {
         "id": fields.Integer,
         "description": fields.String,
     }
 
     def __init__(self):
-        self.__dao = CityDao()
-        self.__model_type = City
+        self.__dao = DistrictDao()
+        self.__model_type = District
         super().__init__(self.__dao, self.__model_type)
 
     @marshal_with(fields)
