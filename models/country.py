@@ -1,5 +1,6 @@
 from models.base_model import BaseModel
-from sqlalchemy import Column, String, Integer, ForeingKey, relationship
+from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy.orm import validates, relationship
 
 
 class Country(BaseModel):
