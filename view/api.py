@@ -10,19 +10,19 @@ from resources.state_resource import StateResource
 app = Flask(__name__)
 api = Api(app)
 
-api.add_resource(AddressResource, '/api/address', endpoint='addresses')
-api.add_resource(AddressResource, 'api/address/<int:id>', endpoint='address')
+api.add_resource(AddressResource, '/api/address/<int:id>', endpoint='addresses')
+api.add_resource(AddressResource, '/api/address', endpoint='address')
 
-api.add_resource(CityResource, '/api/city', endpoint='city')
-api.add_resource(CityResource, 'api/city/<int:id>', endpoint='cities')
+api.add_resource(CityResource, '/api/city/<int:id>', endpoint='city')
+api.add_resource(CityResource, '/api/city', endpoint='cities')
 
-api.add_resource(CountryResource, '/api/country', endpoint='country')
-api.add_resource(CountryResource, 'api/country/<int:id>', endpoint='countries')
+api.add_resource(CountryResource, '/api/country/<int:id>', endpoint='country')
+api.add_resource(CountryResource, '/api/country', endpoint='countries')
 
-api.add_resource(DistrictResource, '/api/district', endpoint='district')
-api.add_resource(DistrictResource, 'api/dstrict/<int:id>', endpoint='districts')
+api.add_resource(DistrictResource, '/api/district/<int:id>', endpoint='district')
+api.add_resource(DistrictResource, '/api/dstrict', endpoint='districts')
 
-api.add_resource(StateResource, '/api/state', endpoint='state')
-api.add_resource(StateResource, 'api/state/<int:id>', endpoint='states')
+api.add_resource(StateResource, '/api/state/<int:id>', endpoint='state')
+api.add_resource(StateResource, '/api/state', endpoint='states')
 
 app.run(debug=True)
