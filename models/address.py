@@ -1,7 +1,6 @@
 import sys
 sys.path.append('.')
 from models.base_model import BaseModel
-from models.district import District
 from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import validates, relationship
 from models.district import District
@@ -30,9 +29,9 @@ class Address(BaseModel):
 
     @validates('number')
     def validate_number(self, key, number):
-        number = validate_type(number, float, key)
+        number = validate_type(number, int, key)
         number = validate_not_empty(number, key)
-        return validate_be_greater_than_zero(number, key)
+        return validate_greater_than_zero(number, key)
     
     @validates('cep')
     def validate_name(self, key, cep):

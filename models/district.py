@@ -1,7 +1,6 @@
 import sys
 sys.path.append('.')
 from models.base_model import BaseModel
-from models.city import City
 from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import validates, relationship
 from models.city import City

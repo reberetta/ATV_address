@@ -1,6 +1,7 @@
 from models.base_model import BaseModel
 from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import validates, relationship
+from utils.validators import validate_not_empty, validate_len, validate_type
 
 
 class Country(BaseModel):
