@@ -23,7 +23,7 @@ api.add_resource(CountryResource, '/api/country/<int:id>', endpoint='country')
 api.add_resource(CountryResource, '/api/country', endpoint='countries')
 
 api.add_resource(DistrictResource, '/api/district/<int:id>', endpoint='district')
-api.add_resource(DistrictResource, '/api/dstrict', endpoint='districts')
+api.add_resource(DistrictResource, '/api/district', endpoint='districts')
 
 api.add_resource(StateResource, '/api/state/<int:id>', endpoint='state')
 api.add_resource(StateResource, '/api/state', endpoint='states')
