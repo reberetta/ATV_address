@@ -1,17 +1,16 @@
 import sys
-sys.path.append('model')
-sys.path.append('dao')
-sys.path.append('resource')
+sys.path.append('.')
 from flask_restful import fields, marshal_with
-from district_dao import DistrictDao
-from district_model import District
-from resource.base_resource import BaseResource
+from dao.district_dao import DistrictDao
+from models.district import District
+from resources.base_resource import BaseResource
 
 
 class DistrictResource(BaseResource):
     fields = {
         "id": fields.Integer,
         "description": fields.String,
+        "id_city": fields.Integer,
     }
 
     def __init__(self):

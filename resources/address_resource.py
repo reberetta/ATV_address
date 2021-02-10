@@ -8,7 +8,7 @@ from resources.base_resource import BaseResource
 
 class AddressResource(BaseResource):
     fields = {
-        "id_": fields.Integer,
+        "id": fields.Integer,
         "description": fields.String,
         "number": fields.Integer,
         "cep": fields.String,

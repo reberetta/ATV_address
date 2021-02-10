@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 from typing import Type
 from flask_restful import Resource
+from flask import request
 from dao.base_dao import BaseDao
 
 

@@ -1,17 +1,16 @@
 import sys
-sys.path.append('model')
-sys.path.append('dao')
-sys.path.append('resource')
+sys.path.append('.')
 from flask_restful import fields, marshal_with
-from state_dao import StateDao
-from state_model import State
-from resource.base_resource import BaseResource
+from dao.state_dao import StateDao
+from models.state import State
+from resources.base_resource import BaseResource
 
 
 class StateResource(BaseResource):
     fields = {
         "id": fields.Integer,
         "description": fields.String,
+        "id_country": fields.Integer,
     }
 
     def __init__(self):

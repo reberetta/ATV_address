@@ -8,9 +8,9 @@ from resources.base_resource import BaseResource
 
 class CityResource(BaseResource):
     fields = {
-        "id_": fields.Integer,
+        "id": fields.Integer,
         "description": fields.String,
-        "id_state": fields.Integer
+        "id_state": fields.Integer,
     }
 
     def __init__(self):

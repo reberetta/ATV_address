@@ -1,11 +1,9 @@
 import sys
-sys.path.append('model')
-sys.path.append('dao')
-sys.path.append('resource')
+sys.path.append('.')
 from flask_restful import fields, marshal_with
-from country_dao import CountryDao
-from country_model import Country
-from resource.base_resource import BaseResource
+from dao.country_dao import CountryDao
+from models.country import Country
+from resources.base_resource import BaseResource
 
 
 class CountryResource(BaseResource):
