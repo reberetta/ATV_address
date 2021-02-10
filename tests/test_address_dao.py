@@ -21,12 +21,12 @@ class TestAddressDao:
 
     def test_address_create(self, create_address, create_address_dao):
         address = create_address_dao.save(create_address)
-        assert address.id_ is not None
+        assert address.id is not None
         create_address_dao.delete(address)
 
     def test_address_read_by_id(self, create_address, create_address_dao):
         address = create_address_dao.save(create_address)
-        address_read = create_address_dao.read_by_id(address.id_)
+        address_read = create_address_dao.read_by_id(address.id)
         assert isinstance(address_read, Address)
         assert address.name == address_read.name
         assert address.description == address_read.description
@@ -40,7 +40,7 @@ class TestAddressDao:
 
     def test_address_delete(self, create_address, create_address_dao):
         address_save = create_address_dao.save(create_address)
-        address = create_address_dao.read_by_id(address_save.id_)
+        address = create_address_dao.read_by_id(address_save.id)
         create_address_dao.delete(address)
-        address_read = create_address_dao.read_by_id(address_save.id_)
+        address_read = create_address_dao.read_by_id(address_save.id)
         assert address_read is None
